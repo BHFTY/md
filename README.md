@@ -11,7 +11,7 @@ Actuellement L'application permet de faire des recherches et d'afficher différe
 
 ## Connexion
 [Page de presentation du projet]((https://cohenrivka2005.wixsite.com/mediatekformation)
-L'application propose quatre niveaux d'accès différents, adaptés aux différents services de la médiathèque. Les utilisateurs n’ayant pas d’autorisation spécifique ne peuvent pas accéder au programme. Le personnel du service comptabilité dispose d’un accès limité, lui permettant uniquement de consulter les livres, DVD et revues. L’accueil bénéficie de droits plus étendus, lui permettant de gérer les documents, mais sans possibilité d’effectuer des commandes ou de souscrire des abonnements. Enfin, les bibliothécaires disposent d’un accès complet à l’ensemble des fonctionnalités de l’application.
+L'application propose quatre niveaux d'accès différents, adaptés aux différents services de la médiathèque. Les utilisateurs n’ayant pas d’autorisation spécifique ne peuvent pas accéder au programme. Le personnel du service comptabilité dispose d’un accès limité, lui permettant uniquement de consulter les livres, DVD et revues. L’accueil bénéficie de droits plus étendus, lui permettant de gérer les documents, mais sans possibilité d’effectuer des commandes ou de souscrire des abonnements. Enfin, les bibliothécaires disposent d’un accès complet à l’ensemble des fonctionnalités de l’application.<br><br>
 ![img2](https://github.com/BHFTY/test3/blob/master/Authetification.PNG?raw=true)<br>
 
 ## Les différents onglets
