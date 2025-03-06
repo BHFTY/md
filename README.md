@@ -1,15 +1,24 @@
 # MediatekDocuments
 Cette application permet de gérer les documents (livres, DVD, revues) d'une médiathèque. Elle a été codée en C# sous Visual Studio 2019. C'est une application de bureau, prévue d'être installée sur plusieurs postes accédant à la même base de données.<br>
 L'application exploite une API REST pour accéder à la BDD MySQL. Des explications sont données plus loin, ainsi que le lien de récupération.
+<br>MediatekDocuments est un fork de [MediaTekDocuments](https://github.com/CNED-SLAM/MediaTekDocuments).
+C'est un projet réalisé dans le cadre du BTS SIO SLAM.<br>
+
 ## Présentation
-Actuellement l'application est partiellement codée. Voici les fonctionnalités actuellement opérationnelles : recherches et affichage d'informations sur les documents de la médiathèque (livres, DVD, revues), réception de nouveaux numéros de revues.<br>
-![img1](https://github.com/CNED-SLAM/MediaTekDocuments/assets/100127886/9b5a4c1b-6914-4455-94bf-fec24adba3ec)
-<br>L'application ne comporte qu'une seule fenêtre divisée en plusieurs onglets.
+Actuellement L'application permet de faire des recherches et d'afficher différents informations dans les onglets des livres, dvd, revues et peut aussi valider la parution d'une revue. De plus elle peut gérer les commandes de livres, dvd et les abonnements aux revues.
+![img1](https://github.com/BHFTY/test3/blob/master/Readme.PNG?raw=true)
+<br>L'application est composé d'une seule fenêtre composée de plusieurs onglets.<br>
+
+## Connexion
+[Page de presentation du projet]((https://cohenrivka2005.wixsite.com/mediatekformation)
+L'application propose quatre niveaux d'accès différents, adaptés aux différents services de la médiathèque. Les utilisateurs n’ayant pas d’autorisation spécifique ne peuvent pas accéder au programme. Le personnel du service comptabilité dispose d’un accès limité, lui permettant uniquement de consulter les livres, DVD et revues. L’accueil bénéficie de droits plus étendus, lui permettant de gérer les documents, mais sans possibilité d’effectuer des commandes ou de souscrire des abonnements. Enfin, les bibliothécaires disposent d’un accès complet à l’ensemble des fonctionnalités de l’application.
+![img2](https://github.com/BHFTY/test3/blob/master/Authetification.PNG?raw=true)<br>
+
 ## Les différents onglets
 ### Onglet 1 : Livres
 Cet onglet présente la liste des livres, triée par défaut sur le titre.<br>
 La liste comporte les informations suivantes : titre, auteur, collection, genre, public, rayon.
-![img2](https://github.com/CNED-SLAM/MediaTekDocuments/assets/100127886/e3f31979-cf24-416d-afb1-a588356e8966)
+![img3](https://github.com/CNED-SLAM/MediaTekDocuments/assets/100127886/e3f31979-cf24-416d-afb1-a588356e8966)
 #### Recherches
 <strong>Par le titre :</strong> Il est possible de rechercher un ou plusieurs livres par le titre. La saisie dans la zone de recherche se fait en autocomplétions sans tenir compte de la casse. Seuls les livres concernés apparaissent dans la liste.<br>
 <strong>Par le numéro :</strong> il est possible de saisir un numéro et, en cliquant sur "Rechercher", seul le livre concerné apparait dans la liste (ou un message d'erreur si le livre n'est pas trouvé, avec la liste remplie à nouveau).
@@ -45,11 +54,42 @@ Cette partie n'est accessible que si une revue a bien été trouvée dans la pre
 Il est possible alors de réceptionner une nouvelle parution en saisissant son numéro, en sélectionnant une date (date du jour proposée par défaut) et en cherchant l'image correspondante (optionnel) qui doit alors s'afficher à droite.<br>
 Le clic sur "Valider la réception" va permettre d'ajouter un tuple dans la table Exemplaire de la BDD. La parution correspondante apparaitra alors automatiquement dans la liste des parutions et les zones de la partie "Nouvelle parution réceptionnée pour cette revue" seront réinitialisées.<br>
 Si le numéro de la parution existe déjà, il n’est pas ajouté et un message est affiché.
-![img3](https://github.com/CNED-SLAM/MediaTekDocuments/assets/100127886/225e10f2-406a-4b5e-bfa9-368d45456056)
+![img4](https://github.com/BHFTY/test3/blob/master/Parutions%20de%20revues.PNG?raw=true)
+
+### Onglet 5 : Commandes Livres
+#### Recherche
+La recherche se fait par le numéro du document ou par le titre du document .
+#### Informations détaillées
+Les informations détaillées sont les meme que celle de l'onglet livre.
+#### Gestion de la commande
+Les commandes en cours ou passées sont affichées.<br>
+Il est possible de modifier le statut de la commande ou la supprimer si elle n'est pas encore livrée.
+#### Nouvelle commande
+Il est possible d'ajouter une nouvelle commande en saisissant les informations de commande.<br>
+![img5](https://github.com/BHFTY/test3/blob/master/AjoutCommande.PNG?raw=true).
+
+### Onglet 6 : Commandes DVD
+L'onglet de Commande de DVD est identique à l'onglet Commandes Livres, à l'exception des informations détaillées spécifiée aux dvd.
+![img5](https://github.com/BHFTY/test3/blob/master/CommandeDvd.PNG?raw=true).
+
+### Onglet 7 : Gestion Revues
+#### Recherche
+La recherche se fait par le numéro de revue ou par le titre d'une revue.
+#### Informations détaillées
+Les informations détaillées sont identiques à celles de l'onglet Revues.
+#### Gestion des abonnements
+Les abonnements en cours ou passées sont affichés.<br>
+Il est possible de supprimer l'abonnement si aucun numéro n'est paru durant la période d'abonnement.
+#### Nouvel abonnement ou renouvellement
+Il est possible d'ajouter un nouvel abonnement en saisissant les informations d'abonnement.<br>
+![img6](https://github.com/BHFTY/test3/blob/master/CommandeAbonnement.PNG?raw=true).<br>
+
 ## La base de données
 La base de données 'mediatek86 ' est au format MySQL.<br>
 Voici sa structure :<br>
-![img4](https://github.com/CNED-SLAM/MediaTekDocuments/assets/100127886/4314f083-ec8b-4d27-9746-fecd1387d77b)
+![img7](https://github.com/user-attachments/assets/e91cc3f2-2d3b-42a6-886d-fda1e658b53e)<br>
+
+
 <br>On distingue les documents "génériques" (ce sont les entités Document, Revue, Livres-DVD, Livre et DVD) des documents "physiques" qui sont les exemplaires de livres ou de DVD, ou bien les numéros d’une revue ou d’un journal.<br>
 Chaque exemplaire est numéroté à l’intérieur du document correspondant, et a donc un identifiant relatif. Cet identifiant est réel : ce n'est pas un numéro automatique. <br>
 Un exemplaire est caractérisé par :<br>
@@ -63,12 +103,14 @@ Un livre a aussi pour identifiant son numéro de document, possède un code ISBN
 De même, un DVD est aussi identifié par son numéro de document, et possède un synopsis, un réalisateur et une durée. Les réalisateurs ne sont pas gérés dans une table séparée (c’est un simple champ texte dans la table DVD).
 Enfin, 3 tables permettent de mémoriser les données concernant les commandes de livres ou DVD et les abonnements. Une commande est effectuée à une date pour un certain montant. Un abonnement est une commande qui a pour propriété complémentaire la date de fin de l’abonnement : il concerne une revue.  Une commande de livre ou DVD a comme caractéristique le nombre d’exemplaires commandé et concerne donc un livre ou un DVD.<br>
 <br>
-La base de données est remplie de quelques exemples pour pouvoir tester son application. Dans les champs image (de Document) et photo (de Exemplaire) doit normalement se trouver le chemin complet vers l'image correspondante. Pour les tests, vous devrez créer un dossier, le remplir de quelques images et mettre directement les chemins dans certains tuples de la base de données qui, pour le moment, ne contient aucune image.<br>
-Lorsque l'application sera opérationnelle, c'est le personnel de la médiathèque qui sera en charge de saisir les informations des documents.
+
+## Documentation technique
+La documentation technique est disponible sous forme de fichier téléchargeable dans le dépôt : 
+
 ## L'API REST
 L'accès à la BDD se fait à travers une API REST protégée par une authentification basique.<br>
 Le code de l'API se trouve ici :<br>
-https://github.com/CNED-SLAM/rest_mediatekdocuments<br>
+[https://github.com/CNED-SLAM/rest_mediatekdocuments<br>](https://github.com/BHFTY/rest_mediatekdocuments)
 avec toutes les explications pour l'utiliser (dans le readme).
 ## Installation de l'application
 Ce mode opératoire permet d'installer l'application pour pouvoir travailler dessus.<br>
