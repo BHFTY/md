@@ -10,7 +10,7 @@ Actuellement L'application permet de faire des recherches et d'afficher différe
 <br>L'application est composé d'une seule fenêtre composée de plusieurs onglets.<br>
 
 ## Connexion
-[Page de presentation du projet]((https://cohenrivka2005.wixsite.com/mediatekformation)
+[Page de presentation du projet](https://cohenrivka2005.wixsite.com/mediatekformation)
 L'application propose quatre niveaux d'accès différents, adaptés aux différents services de la médiathèque. Les utilisateurs n’ayant pas d’autorisation spécifique ne peuvent pas accéder au programme. Le personnel du service comptabilité dispose d’un accès limité, lui permettant uniquement de consulter les livres, DVD et revues. L’accueil bénéficie de droits plus étendus, lui permettant de gérer les documents, mais sans possibilité d’effectuer des commandes ou de souscrire des abonnements. Enfin, les bibliothécaires disposent d’un accès complet à l’ensemble des fonctionnalités de l’application.<br><br>
 ![img2](https://github.com/BHFTY/test3/blob/master/Authetification.PNG?raw=true)<br>
 
@@ -33,11 +33,13 @@ Le fait de cliquer sur le titre d'une des colonnes de la liste des livres, perme
 Si la liste des livres contient des éléments, par défaut il y en a toujours un de sélectionné. Il est aussi possible de sélectionner une ligne (donc un livre) en cliquant n'importe où sur la ligne.<br>
 La partie basse de la fenêtre affiche les informations détaillées du livre sélectionné (numéro de document, code ISBN, titre, auteur(e), collection, genre, public, rayon, chemin de l'image) ainsi que l'image.
 ### Onglet 2 : DVD
+![img4](https://raw.githubusercontent.com/BHFTY/test3/refs/heads/master/Dvd.PNG).
 Cet onglet présente la liste des DVD, triée par titre.<br>
 La liste comporte les informations suivantes : titre, durée, réalisateur, genre, public, rayon.<br>
 Le fonctionnement est identique à l'onglet des livres.<br>
 La seule différence réside dans certaines informations détaillées, spécifiques aux DVD : durée (à la place de ISBN), réalisateur (à la place de l'auteur), synopsis (à la place de collection).
 ### Onglet 3 : Revues
+![img5](https://github.com/BHFTY/test3/blob/master/Revues.PNG?raw=true).
 Cet onglet présente la liste des revues, triées par titre.<br>
 La liste comporte les informations suivantes : titre, périodicité, délai mise à dispo, genre, public, rayon.<br>
 Le fonctionnement est identique à l'onglet des livres.<br>
@@ -54,9 +56,10 @@ Cette partie n'est accessible que si une revue a bien été trouvée dans la pre
 Il est possible alors de réceptionner une nouvelle parution en saisissant son numéro, en sélectionnant une date (date du jour proposée par défaut) et en cherchant l'image correspondante (optionnel) qui doit alors s'afficher à droite.<br>
 Le clic sur "Valider la réception" va permettre d'ajouter un tuple dans la table Exemplaire de la BDD. La parution correspondante apparaitra alors automatiquement dans la liste des parutions et les zones de la partie "Nouvelle parution réceptionnée pour cette revue" seront réinitialisées.<br>
 Si le numéro de la parution existe déjà, il n’est pas ajouté et un message est affiché.
-![img4](https://github.com/BHFTY/test3/blob/master/Parutions%20de%20revues.PNG?raw=true)
+![img6](https://github.com/BHFTY/test3/blob/master/Parutions%20de%20revues.PNG?raw=true)
 
 ### Onglet 5 : Commandes Livres
+![img7](https://github.com/BHFTY/test3/blob/master/commandelivres.png?raw=true).
 #### Recherche
 La recherche se fait par le numéro du document ou par le titre du document .
 #### Informations détaillées
@@ -66,13 +69,14 @@ Les commandes en cours ou passées sont affichées.<br>
 Il est possible de modifier le statut de la commande ou la supprimer si elle n'est pas encore livrée.
 #### Nouvelle commande
 Il est possible d'ajouter une nouvelle commande en saisissant les informations de commande.<br>
-![img5](https://github.com/BHFTY/test3/blob/master/AjoutCommande.PNG?raw=true).
+![img8](https://github.com/BHFTY/test3/blob/master/AjoutCommande.PNG?raw=true).
 
 ### Onglet 6 : Commandes DVD
 L'onglet de Commande de DVD est identique à l'onglet Commandes Livres, à l'exception des informations détaillées spécifiée aux dvd.
-![img5](https://github.com/BHFTY/test3/blob/master/CommandeDvd.PNG?raw=true).
+![img9](https://github.com/BHFTY/test3/blob/master/CommandeDvd.PNG?raw=true).
 
 ### Onglet 7 : Gestion Revues
+![img10](https://github.com/BHFTY/test3/blob/master/Abo.png?raw=true)
 #### Recherche
 La recherche se fait par le numéro de revue ou par le titre d'une revue.
 #### Informations détaillées
@@ -105,15 +109,20 @@ Enfin, 3 tables permettent de mémoriser les données concernant les commandes d
 <br>
 
 ## Documentation technique
-La documentation technique est disponible sous forme de fichier téléchargeable dans le dépôt : 
+La documentation technique est disponible sous forme de fichier téléchargeable dans chaque dépôt.
 
 ## L'API REST
 L'accès à la BDD se fait à travers une API REST protégée par une authentification basique.<br>
 Le code de l'API se trouve ici :<br>
 [https://github.com/CNED-SLAM/rest_mediatekdocuments<br>](https://github.com/BHFTY/rest_mediatekdocuments)
-avec toutes les explications pour l'utiliser (dans le readme).
+avec toutes les explications pour l'utiliser (dans le readme).<br>
+
 ## Installation de l'application
 Ce mode opératoire permet d'installer l'application pour pouvoir travailler dessus.<br>
 - Installer Visual Studio 2019 entreprise et les extension Specflow et newtonsoft.json (pour ce dernier, voir l'article "Accéder à une API REST à partir d'une application C#" dans le wiki de ce dépôt : consulter juste le début pour la configuration, car la suite permet de comprendre le code existant).<br>
 - Télécharger le code et le dézipper puis renommer le dossier en "mediatekdocuments".<br>
-- Récupérer et installer l'API REST nécessaire (https://github.com/CNED-SLAM/rest_mediatekdocuments) ainsi que la base de données (les explications sont données dans le readme correspondant).
+- Récupérer et installer l'API REST nécessaire (https://github.com/BHFTY/rest_mediatekdocuments) ainsi que la base de données (les explications sont données dans le readme correspondant).
+- Le projet est en .NET Framework 4.7.2. <br>
+
+## Tests fonctionnels
+Pour réaliser les tests il faut tout d'abord installer Specflow dans le extensions de l'application Visual studio.
