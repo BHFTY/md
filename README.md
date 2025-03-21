@@ -33,13 +33,13 @@ Le fait de cliquer sur le titre d'une des colonnes de la liste des livres, perme
 Si la liste des livres contient des éléments, par défaut il y en a toujours un de sélectionné. Il est aussi possible de sélectionner une ligne (donc un livre) en cliquant n'importe où sur la ligne.<br>
 La partie basse de la fenêtre affiche les informations détaillées du livre sélectionné (numéro de document, code ISBN, titre, auteur(e), collection, genre, public, rayon, chemin de l'image) ainsi que l'image.
 ### Onglet 2 : DVD
-![img4](https://raw.githubusercontent.com/BHFTY/test3/refs/heads/master/Dvd.PNG).
+![img4](https://raw.githubusercontent.com/BHFTY/test3/refs/heads/master/Dvd.PNG).<br>
 Cet onglet présente la liste des DVD, triée par titre.<br>
 La liste comporte les informations suivantes : titre, durée, réalisateur, genre, public, rayon.<br>
 Le fonctionnement est identique à l'onglet des livres.<br>
 La seule différence réside dans certaines informations détaillées, spécifiques aux DVD : durée (à la place de ISBN), réalisateur (à la place de l'auteur), synopsis (à la place de collection).
 ### Onglet 3 : Revues
-![img5](https://github.com/BHFTY/test3/blob/master/Revues.PNG?raw=true).
+![img5](https://github.com/BHFTY/test3/blob/master/Revues.PNG?raw=true).<br>
 Cet onglet présente la liste des revues, triées par titre.<br>
 La liste comporte les informations suivantes : titre, périodicité, délai mise à dispo, genre, public, rayon.<br>
 Le fonctionnement est identique à l'onglet des livres.<br>
